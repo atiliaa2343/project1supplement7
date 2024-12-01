@@ -24,3 +24,28 @@ def plot_line(y_intercept, slope, lower_x, upper_x):
     plt.legend() 
     plt.show()
 
+def plot_live(distribution="normal", mean=0, stddev=1, duration=10): 
+    points = []
+    plt.ion() 
+    fig, ax = plt.subplots() 
+
+    for _ in range(duration): 
+        if distribution == "normal": 
+            point = np.random.normal(mean, stddev) 
+        elif distribution == "uniform": 
+            point = np.random.uniform(mean, stddev) 
+        else: 
+            raise ValueError("It could not be distributed, use either normal or uniform") 
+        points.append(point) 
+
+        if len(points) > 10: 
+            points.pop(0) 
+
+        ax.clear()
+        ax.plot(points, marker="o", linestyle='-', label="Live Points") 
+        ax.set_title("Live Point Generation") 
+        ax.set_xlabel("Point Index") 
+        ax.set_ylabel("Value") 
+        ax.legend() 
+        plt.pause(1) 
+    plt
