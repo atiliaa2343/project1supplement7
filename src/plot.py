@@ -10,5 +10,17 @@ def plot_normal():
     plt.xlabel("Index") 
     plt.ylabel("Value") 
     plt.legend() 
-    plt.show() 
+    plt.show()  
+
+def plot_line(y_intercept, slope, lower_x, upper_x): 
+    x = np.linspace(lower_x, upper_x, 100) 
+    y = slope * x + y_intercept 
+    plt.plot(x, y, label=f"y = {slope}x + {y_intercept}") 
+    plt.xlim((lower_x, upper_x)) 
+    plt.ylim(min(y), max(y)) 
+    plt.title("Line Plot") 
+    plt.xlabel("x") 
+    plt.ylabel("y") 
+    plt.legend() 
+    plt.show()
 
