@@ -12,12 +12,23 @@ class TestPlotFunctions(unittest.TestCase):
     
     """
     def test_normal(self): 
+        """ 
+        Test the `plot_normal` function 
+
+        Checks that the function executes without raising any exceptions. 
+        This function generates and displays a scatter plot of points sampled from a 
+        standard normal distribution. 
+
+        Raises: 
+            AssertionError: If the function raises an exception.
+        
+        """
         try: 
             plot_normal() 
         except Exception as e: 
             self.fail(f"plot_normal() raised an exception: {e}") 
 
-    def test_line(self): 
+    def test_line(self):  
         try: 
             plot_line(5,10,7,15) 
         except Exception as e: 
