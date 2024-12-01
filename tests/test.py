@@ -29,6 +29,24 @@ class TestPlotFunctions(unittest.TestCase):
             self.fail(f"plot_normal() raised an exception: {e}") 
 
     def test_line(self):  
+        """ 
+        Test the `plot_line` function. 
+
+        Checks that the `plot_line` function executes without raising any exceptions 
+        when provided with valid input parameters. 
+
+
+        Parameters Tested: 
+        - y-intercept: 5 
+        - slope: 10 
+        - lower x-boundary: 7 
+        - upper x-boundary: 15 
+
+        Raises: 
+            AssertionErrorL If the function raises an exception. 
+        
+        
+        """ 
         try: 
             plot_line(5,10,7,15) 
         except Exception as e: 
