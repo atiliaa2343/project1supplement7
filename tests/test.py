@@ -53,6 +53,22 @@ class TestPlotFunctions(unittest.TestCase):
             self.fail(f"plot_line() raised an exception{e}") 
 
     def test_plot_live(self): 
+        """ 
+        Test the `plot_live` function. 
+
+        Checks that that the function executes without raising any exceptions 
+        when generating live points for a specified duration. 
+
+        Parameters Tested: 
+        - Distribution: "normal" 
+        - Mean: 0 
+        - Standard Deviation: 1
+        - Duration: 2 seconds 
+
+        Raises: 
+            AssertionErrorL If the function raises an exception.
+        
+        """
         try: 
             plot_live(distribution="normal", mean=0,stddev =1, duration=2) 
         except Exception as e: 
