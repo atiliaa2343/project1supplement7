@@ -57,6 +57,27 @@ def plot_line(y_intercept, slope, lower_x, upper_x):
     plt.show()
 
 def plot_live(distribution="normal", mean=0, stddev=1, duration=10): 
+    """ 
+    Generate and displays a live plot of points 
+
+    This function generates a point every second for the specified `duration`. 
+    The plot updates to show the last 10 points. It supports two types of distribution: 
+    - Normal: Points are sampled with the given menu and standard deviation. 
+    - Uniform: Points are sampled uniformly within the range. 
+
+    Parameters: 
+        distribution: The type of distribution to sample points from. 
+        mean: The mean for the distribution. 
+        stddev: The standard deviation or range of the distribution. 
+        duration: The total time for for which points are generated and plotted.  
+
+    Raises: 
+        ValueError: If the `distribution` is not "normal" or "uniform". 
+
+    Returns: 
+        None: Displays a live plot 
+    
+    """
     points = []
     plt.ion() 
     fig, ax = plt.subplots() 
