@@ -28,7 +28,23 @@ def plot_normal():
     plt.legend() 
     plt.show()  
 
-def plot_line(y_intercept, slope, lower_x, upper_x):  
+def plot_line(y_intercept, slope, lower_x, upper_x):   
+    """ 
+    Plots a line based on the slope, y-intercept, and x-boundaries. 
+
+    The function calculates the line equation `y = slope * x + y_intercept` over the range 
+    defined by `lower_x` and `upper_x`. It then plots the line within this range. 
+
+    Parameters: 
+    y_intercept : The y-intercept of the line. 
+    slope : The slope of the line 
+    lower_x : The lower boundary for the x-axis. 
+    upper_x : The upper boundary for the x-axis. 
+
+    Returns: 
+        None: Displays the plot in an interactive window. 
+    
+    """
     x = np.linspace(lower_x, upper_x, 100) 
     y = slope * x + y_intercept 
     plt.plot(x, y, label=f"y = {slope}x + {y_intercept}") 
