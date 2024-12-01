@@ -3,6 +3,22 @@ import numpy as np
 import time 
 
 def plot_normal(): 
+    """ 
+    Generates and displays a scatter plot of 200 points sampled from a standard normal distribution. 
+
+    This function samples 200 data points from a normal distibution with a mean of 0 and 
+    a standard deviation of 1. It then plots these points as a scatter plot, with a horizontal 
+    line marking the mean (0). 
+
+    The plot includes: 
+    - A scatter plot of the data points. 
+    - A dashed line at the mean. 
+    - Labels for the axes and a legend. 
+
+    Returns: 
+        None: Displays the plot in an interactive window.
+    
+    """
     points = np.random.normal(0,1,200) 
     plt.scatter(range(len(points)), points, label="Standard Normal Points")
     plt.axhline(0, color="blue", linestyle='--', linewidth=0.8, label="Mean") 
@@ -12,7 +28,7 @@ def plot_normal():
     plt.legend() 
     plt.show()  
 
-def plot_line(y_intercept, slope, lower_x, upper_x): 
+def plot_line(y_intercept, slope, lower_x, upper_x):  
     x = np.linspace(lower_x, upper_x, 100) 
     y = slope * x + y_intercept 
     plt.plot(x, y, label=f"y = {slope}x + {y_intercept}") 
@@ -48,4 +64,5 @@ def plot_live(distribution="normal", mean=0, stddev=1, duration=10):
         ax.set_ylabel("Value") 
         ax.legend() 
         plt.pause(1) 
-    plt
+    plt.ioff() 
+    plt.show()
