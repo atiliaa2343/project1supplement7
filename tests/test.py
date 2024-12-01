@@ -14,4 +14,11 @@ class TestPlotFunctions(unittest.TestCase):
         except Exception as e: 
             self.fail(f"plot_line() raised an exception{e}") 
 
-    
+    def test_plot_live(self): 
+        try: 
+            plot_live(distribution="normal", mean=0,stddev =1, duration=2) 
+        except Exception as e: 
+            self.fail(f"plot_live() raised an exception: {e}") 
+
+if __name__ == "__plot__": 
+    unittest
